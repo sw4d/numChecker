@@ -63,21 +63,11 @@ def infinity_check(num_to_check, num_of_attempts)
 end
 
 def check_user_values(num_to_check, num_of_attempts)
-	#check values entered by user to ensure they're appropriate numbers
-	if num_to_check.is_a?(Numeric) && num_to_check > 0
-	#Valid number, good to go
-	else
-		@errors ||= []
-		@errors << 'The number to check must be a real number.'
-	end
+	@errors ||= []
+	@errors << 'The number to check must be a real number.' unless num_to_check.is_a?(Numeric)
+	@errors << 'The number of iterations must be a real number between 1 and 100,000.' unless num_to_check.is_a?(Numeric) && num_of_attempts < 10001
 
-	if num_of_attempts.is_a?(Numeric) && num_of_attempts > 0 && num_of_attempts < 100001
-	#Valid number, good to go
-	else
-		@errors ||= []
-		@errors << 'The number of iterations must be a real number between 1 and 100,000.'
-	end
-	true unless @errors
+	@errors.any? ? @errors : true
 end
 
 def square_and_sum(values)
