@@ -1,3 +1,6 @@
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8f33878964554760b64163410edf6b22)](https://app.codacy.com/app/sw4d/numChecker?utm_source=github.com&utm_medium=referral&utm_content=sw4d/numChecker&utm_campaign=badger)
+
 Happy number generator – in ruby.
 
 A simple code challenge I found somewhere or another.
